@@ -1,10 +1,30 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #212529;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Estilos para la búsqueda y sugerencias */
 .suggestions {
     position: absolute;
     z-index: 1000;
     width: 95%;
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: auto;
     display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 0.25rem 0.25rem;
 }
 
 .suggestions.show {
@@ -13,46 +33,125 @@
 
 .list-group-item {
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .list-group-item:hover {
     background-color: #f8f9fa;
 }
 
-.med-chip {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
-    border-radius: 25px;
-    background-color: #e9ecef;
+.list-group-item strong {
+    color: #0d6efd;
 }
 
-.med-chip .close {
-    margin-left: 0.5rem;
-    cursor: pointer;
+/* Tarjetas de medicamentos */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 0.5rem;
 }
 
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+/* Niveles de severidad */
 .severity-high {
     background-color: #f8d7da;
     color: #721c24;
+    border-left: 5px solid #dc3545;
 }
 
 .severity-medium {
     background-color: #fff3cd;
     color: #856404;
+    border-left: 5px solid #ffc107;
 }
 
 .severity-low {
     background-color: #d1ecf1;
     color: #0c5460;
+    border-left: 5px solid #17a2b8;
 }
 
 .severity-none {
     background-color: #d4edda;
     color: #155724;
+    border-left: 5px solid #28a745;
 }
 
 .severity-unknown {
     background-color: #e2e3e5;
     color: #383d41;
+    border-left: 5px solid #6c757d;
+}
+
+/* Botones */
+.btn {
+    border-radius: 0.4rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Animaciones */
+.scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Modificaciones a Bootstrap */
+.input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.input-group .form-control:focus {
+    border-left: none;
+}
+
+.alert {
+    border-radius: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-header h5 {
+        font-size: 1.1rem;
+    }
+    
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
