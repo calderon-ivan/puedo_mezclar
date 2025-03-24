@@ -4,8 +4,6 @@ Esta webapp ayuda a comparar medicamentos y bebe directamente de la base de dato
 
 MedInteract España es una aplicación web para verificar posibles interacciones entre medicamentos utilizando datos oficiales de la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS).
 
-![MedInteract Screenshot](https://placeholder-for-screenshot.com)
-
 ## Características
 
 - Búsqueda de medicamentos por nombre usando la base de datos CIMA
