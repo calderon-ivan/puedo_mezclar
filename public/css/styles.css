@@ -1,0 +1,58 @@
+.suggestions {
+    position: absolute;
+    z-index: 1000;
+    width: 95%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.suggestions.show {
+    display: block;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.med-chip {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 25px;
+    background-color: #e9ecef;
+}
+
+.med-chip .close {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.severity-high {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.severity-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.severity-low {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.severity-none {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.severity-unknown {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
