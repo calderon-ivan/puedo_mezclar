@@ -17,20 +17,23 @@ router.get('/medicamentos', async (req, res) => {
       return res.status(400).json({ error: 'El término de búsqueda debe tener al menos 3 caracteres' });
     }
     
-    // Verificar caché
-    const cacheKey = `medicamentos:${nombre}`;
-    if (cache.has(cacheKey)) {
-      return res.json(cache.get(cacheKey));
-    }
+    console.log(`Buscando medicamento: ${nombre}`);
+    const url = `${CIMA_BASE_URL}/medicamentos?nombre=${encodeURIComponent(nombre)}`;
+    console.log(`URL de la petición: ${url}`);
     
-    const response = await axios.get(`${CIMA_BASE_URL}/medicamentos?nombre=${encodeURIComponent(nombre)}`);
-    // Guardar en caché
-    cache.set(cacheKey, response.data);
+    const response = await axios.get(url);
+    console.log(`Respuesta recibida. Total resultados: ${response.data.resultados?.length || 0}`);
     
     res.json(response.data);
   } catch (error) {
     console.error('Error al buscar medicamentos:', error.message);
-    res.status(500).json({ error: 'Error al buscar medicamentos' });
+    // Si hay un error de conexión, enviemos más detalles al cliente
+    res.status(500).json({ 
+      error: 'Error al buscar medicamentos', 
+      details: error.message,
+      // Si es un error de respuesta, incluimos el código
+      statusCode: error.response?.status
+    });
   }
 });
 
