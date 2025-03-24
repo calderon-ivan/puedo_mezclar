@@ -1,3 +1,5 @@
+Esta webapp ayuda a comparar medicamentos y bebe directamente de la base de datos de CIMA AEMPS -> https://sede.aemps.gob.es/docs/CIMA-REST-API_1_19.pdf
+
 ## Paso 1: Configuración del entorno de desarrollo
 
 1. **Instala las herramientas necesarias**:
