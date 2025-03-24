@@ -7,9 +7,9 @@ const api = require('./api');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+// Middleware de CORS mejorado
 app.use(cors({
-  origin: '*',
+  origin: '*', // O configúralo para tu dominio específico en producción
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
